@@ -1,15 +1,16 @@
-use leptos::*;
 use leptos::component;
 use leptos::view;
 use leptos::IntoView;
 use chrono::Datelike;
+use crate::components::services::Services;
+use crate::components::about::About;
 /// Renders the home page of your application.
 #[component]
 pub fn HomePage() -> impl IntoView {
     let current_year = chrono::Local::now().year();
     view! {
         // Hero Section
-        <section class="hero min-h-screen bg-base-200">
+        <section class="hero min-h-screen" style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center;">
             <div class="hero-content text-center">
                 <div class="max-w-3xl">
                     <h1 class="text-5xl font-bold text-primary">"Ross A.M."</h1>
@@ -22,95 +23,18 @@ pub fn HomePage() -> impl IntoView {
             </div>
         </section>
 
-        // About Section
-        <section class="py-20 bg-base-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-secondary">"About Me"</h2>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="prose prose-lg">
-                        <p class="text-base-content-70">
-                            "I'm a passionate developer with expertise in Rust, TypeScript, and modern web frameworks. 
-                            I focus on creating efficient, maintainable, and scalable solutions for businesses and individuals."
-                        </p>
-                    </div>
-                    <div class="stats shadow">
-                        <div class="stat">
-                            <div class="stat-title">"Years Experience"</div>
-                            <div class="stat-value text-primary">"5+"</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-title">"Projects Completed"</div>
-                            <div class="stat-value text-secondary">"50+"</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <About/>
 
-        // Services Section
-        <section class="py-20 bg-base-200">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-secondary">"Services"</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary">"Web Development"</h3>
-                            <p class="text-base-content-70">
-                                "Custom web applications built with modern technologies and best practices."
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary">"UI/UX Design"</h3>
-                            <p class="text-base-content-70">
-                                "Beautiful, intuitive interfaces that enhance user experience."
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary">"Consulting"</h3>
-                            <p class="text-base-content-70">
-                                "Expert advice on technology stack selection and architecture."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Services/>
 
         // Contact Section
         <section id="contact" class="py-20 bg-base-100">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-secondary">"Let's Work Together"</h2>
-                <div class="max-w-lg mx-auto">
-                    <div class="card bg-base-200 shadow-xl">
-                        <div class="card-body">
-                            <form class="space-y-4">
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">"Name"</span>
-                                    </label>
-                                    <input type="text" placeholder="Your name" class="input input-bordered" />
-                                </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">"Email"</span>
-                                    </label>
-                                    <input type="email" placeholder="Your email" class="input input-bordered" />
-                                </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">"Message"</span>
-                                    </label>
-                                    <textarea class="textarea textarea-bordered h-24" placeholder="Your message"></textarea>
-                                </div>
-                                <button class="btn btn-primary w-full">"Send Message"</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="text-4xl font-bold text-center mb-12 text-secondary">
+                    <a href="https://www.linkedin.com/in/ross-martin" class="btn btn-secondary text-3xl py-6 px-12 antialiased">
+                        "Let's Work Together"
+                    </a>
+                </h2>
             </div>
         </section>
 
